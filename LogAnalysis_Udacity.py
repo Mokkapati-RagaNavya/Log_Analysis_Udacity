@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 import psycopg2
-#Database Server Connection 
-conn = psycopg2.connect(dbname='news',
-        user='vagrant',
-        password='vagrant'
-#create cursor object        )
-c = conn.cursor()
-
 #first top 3 articles execution
 def Most_Pop_Articles():
     conn=psycopg2.connect(dbname="news",user='vagrant',password='vagrant')
