@@ -1,19 +1,13 @@
 #!/usr/bin/env python
 import psycopg2
+#Database Server Connection 
 conn = psycopg2.connect(dbname='news',
         user='vagrant',
         password='vagrant'
-        )
+#create cursor object        )
 c = conn.cursor()
 
-'''def execute_query(query):
-    try:
-        c.execute(query)
-        results = c.fetchall()
-        return results
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)'''
-
+#first top 3 articles execution
 def Most_Pop_Articles():
     conn=psycopg2.connect(dbname="news",user='vagrant',password='vagrant')
     cur=conn.cursor()
@@ -30,6 +24,7 @@ def Most_Pop_Articles():
         print(num + tit + views)
         count=count+1
         #print('  "{0}"===>{1} views'.format(result[0], result[1]))
+#top 4 authors
 def Most_Pop_Authors():
     
     conn=psycopg2.connect(dbname="news",user='vagrant',password='vagrant')
@@ -51,6 +46,7 @@ def Most_Pop_Authors():
         print(num + tit + views)
         count=count+1
         #print('  "{0}"====>{1} views'.format(result[0], result[1]))
+#lead errors
 def Log_Error_Analysis():
     conn=psycopg2.connect(dbname="news",user='vagrant',password='vagrant')
     cur=conn.cursor()
