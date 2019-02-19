@@ -22,6 +22,7 @@ This project consists for the following files are:
 1. Python
 2. Vagrant
 3. VirtualBox
+4. Postgresql
 
 ## Installation
 
@@ -43,7 +44,7 @@ There are some dependancies and a few instructions on how to run the application
 
 ## How to Run Project
 
-Download the project zip file to you computer and unzip the file then place inside `vagrant/logs-analysis`.
+Download the project zip file to you computer and unzip the file then place inside `vagrant/Log_Analysis_Udacity`.
 
   1. Launch the Vagrant VM inside Vagrant sub-directory in the downloaded fullstack-nanodegree-vm repository using command:
   
@@ -69,9 +70,14 @@ Download the project zip file to you computer and unzip the file then place insi
   ```
     $ psql -d news -f newsdata.sql
   ```
-   8. Run newsdata.py using:
+  8. Load the Virtual Tables or Create Views in Local Data Base
+  
   ```
-    $ python newsdata.py
+    $ psql -d news -f views.sql
+  ```
+   9. Run newsdata.py using:
+  ```
+    $ python LogAnalysis_Udacity.py.py
   ```
   Note: queries will take sometime to execute 
 
